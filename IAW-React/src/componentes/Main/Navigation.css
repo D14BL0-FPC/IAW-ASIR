@@ -1,0 +1,31 @@
+/* src/components/main/Navigation.css */
+
+.custom-navbar {
+  background-color: #343a40; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  
+  /* --- AÑADE ESTAS DOS LÍNEAS --- */
+  padding-top: 0.5rem;    /* 8px de relleno arriba */
+  padding-bottom: 0.5rem; /* 8px de relleno abajo */
+  /* --------------------------------- */
+}
+
+.custom-navbar .navbar-brand {
+  color: white; 
+  font-weight: bold;
+}
+.custom-navbar .navbar-brand:hover {
+  color: #f0f0f0; 
+}
+
+.custom-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85); 
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  padding: 8px 12px !important; 
+}
+
+.custom-navbar .nav-link:hover {
+  color: white; 
+  background-color: rgba(255, 255, 255, 0.1); 
+}
