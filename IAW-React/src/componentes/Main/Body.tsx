@@ -1,3 +1,5 @@
+// src/components/main/Body.tsx
+
 import React from 'react';
 import './Body.css';
 
@@ -11,9 +13,10 @@ import Autocomplete from '@mui/material/Autocomplete';
 // 3. Importamos nuestro componente Card reutilizable
 import InfoCard from './Infocard';
 
+// Datos para las Cards
 const cardData = [
   {
-    imgSrc: 'https://pics.filmaffinity.com/k-558741331-mmed.jpg',
+    imgSrc: 'https://www.animenewsnetwork.com/hotlink/images/encyc/A16873-2139026003.1426656477.jpg',
     title: 'K Project',
     text: 'El anime K Project sigue a Yashiro Isana, un estudiante aparentemente normal que se ve envuelto en un conflicto entre clanes sobrenaturales en Tokio.'
   },
@@ -48,7 +51,6 @@ const Body: React.FC = () => {
             options={marvelHeroes}
             sx={{ 
               width: '100%',
-              // Estilos para que MUI se vea bien en el sidebar oscuro
               "& .MuiInputLabel-root": { color: 'white' },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": { borderColor: 'white' },
@@ -68,7 +70,7 @@ const Body: React.FC = () => {
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder (Rick Astley)
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -85,7 +87,6 @@ const Body: React.FC = () => {
           <h2>MI Top Animes</h2>
           <p>Top dos de mis animes favoritos</p>
           <Row className="g-4 mb-5">
-            {/* Iteramos sobre los datos y pasamos las props a InfoCard */}
             {cardData.map((card, index) => (
               <Col md={4} key={index}>
                 <InfoCard
@@ -97,20 +98,19 @@ const Body: React.FC = () => {
             ))}
           </Row>
 
-          {/* Sección de Galería */}
+          {/* Sección de Galería (CAMBIOS AQUÍ) */}
           <h2>Galería de Fotos</h2>
-          <Row className="g-3">
-            <Col md={3} sm={6}>
-              <Image src="" fluid rounded thumbnail />
+          <Row className="g-3 galeria-cuadrada"> {/* Añadimos la clase "galeria-cuadrada" a la Row */}
+            {/* Cambiamos md={3} a md={2} para 6 imágenes por fila o md={3} para 4 por fila */}
+            <Col md={3} sm={6} xs={6}> {/* md={3} para 4 por fila, sm={6} para 2 por fila en móvil */}
+              <div className="imagen-wrapper"> {/* Nuevo wrapper para la imagen */}
+                <Image src="https://wallpapers.com/images/hd/cute-boy-anime-736-x-1444-0v2pmz8r4n8qi3hs.jpg" fluid /> {/* Quitamos rounded y thumbnail, lo haremos con CSS */}
+              </div>
             </Col>
-            <Col md={3} sm={6}>
-              <Image src="" fluid rounded thumbnail />
-            </Col>
-            <Col md={3} sm={6}>
-              <Image src="" fluid rounded thumbnail />
-            </Col>
-            <Col md={3} sm={6}>
-              <Image src="" fluid rounded thumbnail />
+            <Col md={3} sm={6} xs={6}>
+              <div className="imagen-wrapper">
+                <Image src="https://wallpapers.com/images/thumbnail/cute-boy-anime-5udungvbp2crf3ox.webp" fluid />
+              </div>
             </Col>
           </Row>
         </Container>

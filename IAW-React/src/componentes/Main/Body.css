@@ -44,9 +44,25 @@
   border: 0;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .body-component {
-    flex-direction: column;
-  }
+/*
+ * Estilos para la galería de imágenes cuadradas
+*/
+.galeria-cuadrada .imagen-wrapper {
+  width: 100%;
+  padding-bottom: 100%; /* Truco CSS para que el contenedor sea siempre cuadrado (altura igual al ancho) */
+  position: relative; /* Necesario para posicionar la imagen dentro */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga */
+  border: 1px solid #ddd; /* Borde sutil como en tu imagen */
+  border-radius: 4px; /* Bordes ligeramente redondeados */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+.galeria-cuadrada .imagen-wrapper img {
+  position: absolute; /* Posicionamos la imagen dentro del wrapper */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto es CLAVE: la imagen cubrirá todo el cuadrado, recortándose si es necesario */
+  display: block; /* Asegura que la imagen se comporte como un bloque */
 }
