@@ -1,13 +1,8 @@
-/* Reseteo básico */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-/* * Contenedor principal (Vertical)
- * 1. Lo convertimos en una columna flex.
- * 2. Le damos una altura mínima del 100% de la pantalla.
-*/
 .pagina-container {
   display: flex;
   flex-direction: column;

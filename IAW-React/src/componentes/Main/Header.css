@@ -1,6 +1,6 @@
 .header-component {
   /* Imagen de fondo de placeholder (cámbiala por la tuya) */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/src/assets/imagenes/1_5846.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/imagenes/1_5846.jpg);
   background-size: cover;
   background-position: center;
   

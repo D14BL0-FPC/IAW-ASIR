@@ -1,22 +1,22 @@
-// src/components/main/Body.tsx
-
 import React from 'react';
 import './Body.css';
 
-// 1. Imports de Bootstrap para el layout
-import { Container, Row, Col, Image } from 'react-bootstrap';
 
+// 1. Imports de Bootstrap para el layout
+import { Container, Row, Col } from 'react-bootstrap';
 // 2. Imports de Material-UI para el Autocomplete
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
 // 3. Importamos nuestro componente Card reutilizable
 import InfoCard from './Infocard';
+import './Galeria.tsx';
 
+import MiCarrusel from './Galeria.tsx';
 // Datos para las Cards
 const cardData = [
   {
-    imgSrc: 'https://www.animenewsnetwork.com/hotlink/images/encyc/A16873-2139026003.1426656477.jpg',
+    imgSrc: 'https://cdn.somoskudasai.com/image/2400d1efb6c2b77c8854d0f6d1d1e84b/731x1026/DJPtdsEUMAAB0vu.jpg',
     title: 'K Project',
     text: 'El anime K Project sigue a Yashiro Isana, un estudiante aparentemente normal que se ve envuelto en un conflicto entre clanes sobrenaturales en Tokio.'
   },
@@ -24,6 +24,11 @@ const cardData = [
     imgSrc: 'https://i.ebayimg.com/images/g/-LUAAOSwfyVcwunZ/s-l1200.jpg',
     title: 'Tenshei shitara Slime Datta Ken',
     text: 'El anime tensei shitara slime datta ken sigue a Satoru Mikami, un hombre de 37 años que es asesinado y reencarnado en un mundo de fantasía como un slime con habilidades únicas.'
+  },
+  {
+    imgSrc: 'https://www.normaeditorial.com/upload/media/albumes/0001/19/a62f366fb2a0a4526d1e9eef2983ddc0042a8e3b.jpeg',
+    title: 'Solo Leveling',
+    text: 'El anime Solo Leveling sigue a Sung Jin-Woo, un cazador débil que obtiene la habilidad de subir de nivel y volverse más fuerte en un mundo lleno de monstruos y mazmorras.'
   },
 ];
 
@@ -65,12 +70,25 @@ const Body: React.FC = () => {
 
         {/* Widget de Vídeo de YouTube */}
         <div className="widget">
-          <h5>Vídeo Destacado</h5>
+          <h5>Vídeo Destacado 1</h5>
           <div className="video-responsive">
             <iframe
               width="560"
               height="315"
               src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <br />
+          <h5>Video Destacado 2</h5>
+          <div className="video-responsive">
+            <iframe
+              width="560"
+              height="315"
+              src="https://youtu.be/BedNzgxGXds?si=So9Qkwn6cqg3XihE" 
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -84,8 +102,8 @@ const Body: React.FC = () => {
       <main className="content">
         <Container fluid>
           {/* Sección de Cards */}
-          <h2>MI Top Animes</h2>
-          <p>Top dos de mis animes favoritos</p>
+          <h2>Mi Top Animes</h2>
+          <p>Top tres de mis animes favoritos</p>
           <Row className="g-4 mb-5">
             {cardData.map((card, index) => (
               <Col md={4} key={index}>
@@ -97,22 +115,7 @@ const Body: React.FC = () => {
               </Col>
             ))}
           </Row>
-
-          {/* Sección de Galería (CAMBIOS AQUÍ) */}
-          <h2>Galería de Fotos</h2>
-          <Row className="g-3 galeria-cuadrada"> {/* Añadimos la clase "galeria-cuadrada" a la Row */}
-            {/* Cambiamos md={3} a md={2} para 6 imágenes por fila o md={3} para 4 por fila */}
-            <Col md={3} sm={6} xs={6}> {/* md={3} para 4 por fila, sm={6} para 2 por fila en móvil */}
-              <div className="imagen-wrapper"> {/* Nuevo wrapper para la imagen */}
-                <Image src="https://wallpapers.com/images/hd/cute-boy-anime-736-x-1444-0v2pmz8r4n8qi3hs.jpg" fluid /> {/* Quitamos rounded y thumbnail, lo haremos con CSS */}
-              </div>
-            </Col>
-            <Col md={3} sm={6} xs={6}>
-              <div className="imagen-wrapper">
-                <Image src="https://wallpapers.com/images/thumbnail/cute-boy-anime-5udungvbp2crf3ox.webp" fluid />
-              </div>
-            </Col>
-          </Row>
+          <MiCarrusel />
         </Container>
       </main>
     </div>

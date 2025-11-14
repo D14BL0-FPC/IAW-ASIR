@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css'; // Estilos para el layout principal
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Importamos los componentes desde su nueva ubicación
 import Header from './componentes/Main/Header';
@@ -14,7 +15,7 @@ const App: React.FC = () => {
       
       <Header />
       <Navigation />
-      <Body />
+      <Body /> 
       <Footer />
 
     </div>

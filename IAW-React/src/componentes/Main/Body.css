@@ -47,22 +47,21 @@
 /*
  * Estilos para la galería de imágenes cuadradas
 */
-.galeria-cuadrada .imagen-wrapper {
-  width: 100%;
-  padding-bottom: 100%; /* Truco CSS para que el contenedor sea siempre cuadrado (altura igual al ancho) */
-  position: relative; /* Necesario para posicionar la imagen dentro */
-  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga */
-  border: 1px solid #ddd; /* Borde sutil como en tu imagen */
-  border-radius: 4px; /* Bordes ligeramente redondeados */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sombra sutil */
+
+.content .carousel-caption {
+  color: #212529; /* Color de texto oscuro */
+  
+  /* Añadimos un fondo semi-transparente para mejorar la legibilidad del texto sobre cualquier imagen */
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 2rem;
 }
 
-.galeria-cuadrada .imagen-wrapper img {
-  position: absolute; /* Posicionamos la imagen dentro del wrapper */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Esto es CLAVE: la imagen cubrirá todo el cuadrado, recortándose si es necesario */
-  display: block; /* Asegura que la imagen se comporte como un bloque */
+.content .carousel-caption h3 {
+  color: #000;
+  font-weight: bold;
 }
